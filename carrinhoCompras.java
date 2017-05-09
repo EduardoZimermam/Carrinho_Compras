@@ -1,7 +1,7 @@
-/* *
-   * @author Eduardo Zimermam Pereira
-   *
-   */
+/**
+  * @author Eduardo Zimermam Pereira
+  *
+  */
 
 
 public interface User{
@@ -19,14 +19,21 @@ public class Item{
 }
 
 public class CarrinhoCompras extends Item implements User{
-	int totalItens;
+	public int totalItens;
 	private static CarrinhoCompras carrinho;
 
-	public static CarrinhoCompras getInstance(){
-		if (carrinho == NULL){											/*Carrinho de compras sendo instanciado seguindo o padrão Singleton*/
+	public static CarrinhoCompras getInstance_Carrinho(){
+		if (carrinho == NULL){									/*Construtor do Carrinho de compras seguindo o padrão Singleton*/
 			 carrinho = new CarrinhoCompras();
 		}
 		return carrinho;
+	}
+
+	public static Item getInstance_Item(){
+		Item item = new Item();				/*Construtor para os itens*/
+		totalItens++;							
+
+		return item;
 	}
 
 }
