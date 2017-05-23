@@ -4,7 +4,6 @@
   */
 
 public class CarrinhoCompras{
-	public int totalItens;
 	private static CarrinhoCompras carrinho;
 
 	public static CarrinhoCompras getInstance_Carrinho(){
@@ -12,13 +11,6 @@ public class CarrinhoCompras{
 			 carrinho = new CarrinhoCompras();
 		}
 		return carrinho;
-	}
-
-	public static Item getInstance_Item(int totalItens){
-		Item item = new Item();				/*Construtor para os itens*/
-		totalItens++;							
-
-		return item;
 	}
 
 }

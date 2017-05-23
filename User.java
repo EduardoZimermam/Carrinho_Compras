@@ -6,6 +6,7 @@
 
 public class User{
 	String nome,
-		   email,
+		   email,								/** Classe que define o Usuário**/
+	       especif, 
 		   id_U;
 }
