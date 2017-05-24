@@ -5,16 +5,18 @@
 
 public class Item{
 	String preco,
-	       data_Entrega, 
-	       marca, 							/** Classe que define o item**/
+	       data_Entrega, 				/*Classe que gera o objeto item.*/
+	       marca, 							
 	       especif, 
 	       id_I; 
-	public int totalItens;
+	
+	public static int totalItens;
 
 
-	 public static Item getInstance_Item(int totalItens){
-		Item item = new Item();										/*Construtor para os itens*/
-		totalItens++;							
+
+	public static Item getInstance_Item(){
+		Item item = new Item();							/*Método responsável pela instanciação de cada Item, fazendo uma contagem de cada item que esta no carrinho*/										
+		totalItens++;							                      
 
 		return item;
 	}
