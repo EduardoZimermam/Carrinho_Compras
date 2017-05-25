@@ -3,16 +3,20 @@
   *
   */
 
-public class CarrinhoCompras{
+public class CarrinhoCompras extends CarrinhoComprasFactory(){
+	int totalItens;
 
-	public static CarrinhoCompras getInstance_Carrinho(){
-	
-		private static CarrinhoCompras carrinho;
+	public Usuario getInstanceUsuario(String nome, String email, String id){
+			private static Usuario user;
 
-		if (carrinho == NULL){									/*Construtor do Carrinho de compras seguindo o padrão Singleton*/
-			 carrinho = new CarrinhoCompras();
-		}
-		return carrinho;
+			if (user == NULL){
+				user = new Usuario();
+			}
+
+			return user;
 	}
 
+	public Item getInstanceItem(String preco, String dataEntrega, String marca, String especificacao,  String id){
+
+	}
 }
