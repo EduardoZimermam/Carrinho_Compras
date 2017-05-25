@@ -6,7 +6,7 @@
 public class CarrinhoCompras extends CarrinhoComprasFactory(){
 	int totalItens;
 
-	public Usuario getInstanceUsuario(String nome, String email, String id){
+	public Usuario getInstanceUsuario(){
 			private static Usuario user;
 
 			if (user == NULL){
@@ -16,7 +16,7 @@ public class CarrinhoCompras extends CarrinhoComprasFactory(){
 			return user;
 	}
 
-	public Item getInstanceItem(String preco, String dataEntrega, String marca, String especificacao,  String id){
+	public Item getInstanceItem(){
 
 	}
 }
