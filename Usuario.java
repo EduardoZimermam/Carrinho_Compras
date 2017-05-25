@@ -4,7 +4,18 @@
   */
 
 class Usuario{
-		String nome,
-		       email,								/** Classe que define o objeto Usuário. **/
- 	  	     id_U;
+	String nome,
+	       email,								
+ 	       id_U;
+
+ 	private static Usuario user;
+
+	public static Usuario getInstanceUsuario(){
+		
+		if (user == null){								/** Método get para instanciar o usuário do carrinho de compras **/
+			user = new Usuario();
+		}
+
+		return user;
+	}
 }

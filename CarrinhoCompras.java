@@ -3,20 +3,15 @@
   *
   */
 
-public class CarrinhoCompras extends CarrinhoComprasFactory(){
-	int totalItens;
+public class CarrinhoCompras{
+	Usuario user = Usuario.getInstanceUsuario();
+	static int totalItens;
 
-	public Usuario getInstanceUsuario(){
-			private static Usuario user;
+	public static Item getInstanceItem(){
+		Item item = new Item();
 
-			if (user == NULL){
-				user = new Usuario();
-			}
+		totalItens++;
 
-			return user;
-	}
-
-	public Item getInstanceItem(){
-
+		return item;
 	}
 }
