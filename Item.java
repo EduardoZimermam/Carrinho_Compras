@@ -8,5 +8,5 @@ public class Item{
            dataEntrega, 				/** Classe que define o objeto item. **/
            marca,
            especificacao,
-	       id_I;
+	       id;
 }

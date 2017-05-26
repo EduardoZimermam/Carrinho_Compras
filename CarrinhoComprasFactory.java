@@ -5,6 +5,5 @@
 
 public abstract class CarrinhoComprasFactory{
 
-    public abstract Item getInstanceItem();
-    
+    	public abstract ArrayList<Item> incluiItem(ArrayList<Item>, String, String, String, String, String);
 }
