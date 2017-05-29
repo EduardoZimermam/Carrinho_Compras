@@ -6,4 +6,5 @@
 public abstract class CarrinhoComprasFactory{
 
     	public abstract ArrayList<Item> incluiItem(ArrayList<Item>, String, String, String, String, String);
+    	public abstract ArrayList<Item> excluiItem(ArrayList<Item>, String);
 }

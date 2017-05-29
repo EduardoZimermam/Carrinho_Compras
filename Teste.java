@@ -5,22 +5,19 @@ public class Teste{
 		CarrinhoCompras carrinho = new CarrinhoCompras();
 		ArrayList <Item> itens = new ArrayList <Item>();
 
-		carrinho.user.nome = "João";
-
-		System.out.println(carrinho.user.nome);
-
 		carrinho.incluiItem(itens, "49,99", "25/05/2017", "LG", "Fone", "I1");
 		carrinho.incluiItem(itens, "149,99", "25/05/2017", "Levi's", "Calça", "I2");
+		carrinho.incluiItem(itens, "139,99", "25/05/2017", "Bosch", "Bateria moto", "I3");
+		int tam = itens.size();
 
-		System.out.println(itens.get(0).preco);
-		System.out.println(itens.get(0).dataEntrega);
-		System.out.println(itens.get(0).marca);
-		System.out.println(itens.get(0).especificacao);
-		System.out.println(itens.get(0).id);
-		System.out.println(itens.get(1).preco);
-		System.out.println(itens.get(1).dataEntrega);
-		System.out.println(itens.get(1).marca);
-		System.out.println(itens.get(1).especificacao);
-		System.out.println(itens.get(1).id);
+		for(int i = 0; i < tam; i++)
+			System.out.println(itens.get(i).id);
+
+		carrinho.excluiItem(itens, "I2");
+		System.out.println("\n\n");
+
+		for(int i = 0; i < tam; i++)
+			System.out.println(itens.get(i).id);
+
 	}
 }

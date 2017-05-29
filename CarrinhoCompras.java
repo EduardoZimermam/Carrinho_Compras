@@ -23,4 +23,17 @@ public class CarrinhoCompras{
 		return lista;
 
 	}
+
+	public static ArrayList<Item> excluiItem(ArrayList<Item> lista, String ident){
+
+		int i = 0;
+
+		while(lista.get(i).id != ident){
+			i++;
+		}
+
+		lista.remove(lista.get(i));
+
+		return lista;
+	}
 }
