@@ -21,11 +21,9 @@ public class CarrinhoCompras{
 		lista.add(item);
 
 		return lista;
-
 	}
 
 	public static ArrayList<Item> excluiItem(ArrayList<Item> lista, String ident){
-
 		int i = 0;
 
 		while(lista.get(i).id != ident){
@@ -35,5 +33,20 @@ public class CarrinhoCompras{
 		lista.remove(lista.get(i));
 
 		return lista;
+	}
+
+	public static ArrayList<Item> alteraItem(ArrayList<Item> lista, String valor, String data, String marca, String obs, String ident){
+		int i = 0;
+
+		while(lista.get(i).id != ident){
+			i++;
+		}
+
+		lista.get(i).preco = valor;
+		lista.get(i).dataEntrega = data;
+		lista.get(i).marca = marca;
+		lista.get(i).especificacao = obs;
+
+		return(lista);
 	}
 }
