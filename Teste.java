@@ -23,6 +23,8 @@ public class Teste{
 		carrinho.excluiItem(itens, "I2");
 		System.out.println("\n\n");
 
+		tam = itens.size();
+
 		System.out.println("EXCLUI O ITEM I2:");
 
 		for(int i = 0; i < tam; i++){

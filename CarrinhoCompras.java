@@ -27,6 +27,7 @@ public class CarrinhoCompras{
 		int i = 0;
 
 		while(lista.get(i).id != ident){
+			System.out.println(lista.get(i).id + ident);
 			i++;
 		}
 
