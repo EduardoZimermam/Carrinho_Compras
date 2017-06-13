@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Teste{
 	public static void main(String[] args) {
-		CarrinhoCompras carrinho = new CarrinhoCompras();
+		CarrinhoComprasFactory carrinho = new CarrinhoComprasFactory();
 		ArrayList <Item> itens = new ArrayList <Item>();
 
 		carrinho.incluiItem(itens, "49,99", "25/05/2017", "LG", "Fone", "I1");
