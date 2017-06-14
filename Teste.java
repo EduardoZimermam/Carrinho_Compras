@@ -2,51 +2,15 @@ import java.util.ArrayList;
 
 public class Teste{
 	public static void main(String[] args) {
-		CarrinhoComprasFactory carrinho = new CarrinhoComprasFactory();
-		ArrayList <Item> itens = new ArrayList <Item>();
+		CarrinhoComprasFactory carrinho = CarrinhoComprasFactory.getInstanceCarrinho("João", "joaozinho@email.com", "U1", "C1");
 
-		carrinho.incluiItem(itens, "49,99", "25/05/2017", "LG", "Fone", "I1");
-		carrinho.incluiItem(itens, "149,99", "25/05/2017", "Levi's", "Calça", "I2");
-		carrinho.incluiItem(itens, "139,99", "25/05/2017", "Bosch", "Bateria moto", "I3");
-		int tam = itens.size();
+		carrinho.incluiItem("9,25", "25/05/2017", "Elma Chips", "Salgadinho Fandangos", "P1");
+		carrinho.incluiItem("5,95", "25/05/2017", "Bauducco", "Pão de mel", "P2");
+		carrinho.incluiItem("7,19", "25/05/2017", "Nestlé", "Farinha Láctea", "P3");
 
-		System.out.println("ESTOU IMPRIMINDO O ARRAY:");
+		carrinho.excluiItem("P2");
 
-		for(int i = 0; i < tam; i++){
-			System.out.println(itens.get(i).id);
-			System.out.println(itens.get(i).preco);
-			System.out.println(itens.get(i).dataEntrega);
-			System.out.println(itens.get(i).marca);
-			System.out.println(itens.get(i).especificacao);
-		}
+		carrinho.alteraItem("0,99", "25/05/2017", "Nissin", "Miojo", "P1");
 
-		carrinho.excluiItem(itens, "I2");
-		System.out.println("\n\n");
-
-		tam = itens.size();
-
-		System.out.println("EXCLUI O ITEM I2:");
-
-		for(int i = 0; i < tam; i++){
-			System.out.println(itens.get(i).id);
-			System.out.println(itens.get(i).preco);
-			System.out.println(itens.get(i).dataEntrega);
-			System.out.println(itens.get(i).marca);
-			System.out.println(itens.get(i).especificacao);
-		}
-
-		System.out.println("\n\n");
-
-		carrinho.alteraItem(itens, "139,99", "25/05/2017", "Bosch", "Bateria moto", "I1");
-
-		System.out.println("ALTEREI O ITEM I1 IGUAL AO I3:");
-
-		for(int i = 0; i < tam; i++){
-			System.out.println(itens.get(i).id);
-			System.out.println(itens.get(i).preco);
-			System.out.println(itens.get(i).dataEntrega);
-			System.out.println(itens.get(i).marca);
-			System.out.println(itens.get(i).especificacao);
-		}
 	}
 }

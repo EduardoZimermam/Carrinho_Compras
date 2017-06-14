@@ -6,51 +6,69 @@
 import java.util.ArrayList;
 
 public class CarrinhoComprasFactory implements CarrinhoComprasCommand{
-	Usuario user = Usuario.getInstanceUsuario();
+	private static CarrinhoComprasFactory carrinho;
+	ArrayList <Item> item = new ArrayList <Item>();
 	static int totalItens;
+	String id_C;
 
-	@Override
-	public ArrayList<Item> incluiItem(ArrayList<Item> lista, String valor, String data, String marca, String obs, String ident){
-		Item item = new Item();
+	public static CarrinhoComprasFactory getInstanceCarrinho(String name, String e_mail, String id_U, String id_C){
 
-		item.preco = valor;
-		item.dataEntrega = data;
-		item.marca = marca;
-		item.especificacao = obs;
-		item.id = ident;
+		if (carrinho == null){								
+			carrinho = new CarrinhoComprasFactory();
+			System.out.println("Criando o carrinho de compras: "+id_C);				/** Método get para instanciar o carrinho de compras **/
+			Usuario user = Usuario.getInstanceUsuario(name, e_mail, id_U);	
+		}
 
-		lista.add(item);
-
-		return lista;
+		return carrinho;
 	}
 
 	@Override
-	public ArrayList<Item> excluiItem(ArrayList<Item> lista, String ident){
-		int i = 0;
+	public ArrayList<Item> incluiItem(String valor, String data, String marca, String obs, String ident){
+		Item newItem = new Item();
 
-		while(lista.get(i).id != ident){
-			System.out.println(lista.get(i).id + ident);
-			i++;
-		}
+		System.out.println("Incluindo o item " +ident+ " ao carrinho de compras.");
 
-		lista.remove(lista.get(i));
+		newItem.preco = valor;
+		newItem.dataEntrega = data;
+		newItem.marca = marca;
+		newItem.especificacao = obs;
+		newItem.id = ident;
 
-		return lista;
+		item.add(newItem);
+		totalItens++;
+
+		return item;
 	}
 
 	@Override
-	public ArrayList<Item> alteraItem(ArrayList<Item> lista, String valor, String data, String marca, String obs, String ident){
+	public ArrayList<Item> excluiItem(String ident){
 		int i = 0;
 
-		while(lista.get(i).id != ident){
+		while(item.get(i).id != ident){
 			i++;
 		}
 
-		lista.get(i).preco = valor;
-		lista.get(i).dataEntrega = data;
-		lista.get(i).marca = marca;
-		lista.get(i).especificacao = obs;
+		System.out.println("Removendo o item " +ident+ " do carrinho de compras.");
+		item.remove(item.get(i));
+		totalItens--;
 
-		return(lista);
+		return item;
+	}
+
+	@Override
+	public ArrayList<Item> alteraItem(String valor, String data, String marca, String obs, String ident){
+		int i = 0;
+
+		while(item.get(i).id != ident){
+			i++;
+		}
+
+		System.out.println("Alterando o item " +ident+ " do carrinho de compras.");
+		item.get(i).preco = valor;
+		item.get(i).dataEntrega = data;
+		item.get(i).marca = marca;
+		item.get(i).especificacao = obs;
+
+		return item;
 	}
 }
